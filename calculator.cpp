@@ -7,6 +7,10 @@ int main() {
     std::cout << "Sum: " << a + b << std::endl;
     std::cout << "Difference: " << a - b << std::endl;
     std::cout << "Product: " << a * b << std::endl;
-    std::cout << "Quotient: " << a / b << std::endl; // Added division (with potential divide-by-zero bug)
+    if (b != 0) { // Added a check to avoid division by zero.
+        std::cout << "Quotient: " << static_cast<double>(a) / b << std::endl;
+    } else {
+        std::cout << "Cannot divide by zero." << std::endl;
+    }
     return 0;
 }
